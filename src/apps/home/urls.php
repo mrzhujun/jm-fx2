@@ -4,10 +4,14 @@ return [
     // test
     '' => [
         'get' => [
-            'handler' => function(\Slim\Http\Request  $request, \Slim\Http\Response  $response, $args=[]) {
-                $response->getBody()->write("45465465");
-                return $response;
-            },
+            'handler' => "App\Controllers\IndexController:index",
+            'name' => 'home_ping',
+            'auth' => false
+        ],
+    ],
+    'aaa[/]' => [
+        'get' => [
+            'handler' => "App\Controllers\IndexController:test",
             'name' => 'home_ping',
             'auth' => false
         ],

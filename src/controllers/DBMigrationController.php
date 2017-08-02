@@ -8,7 +8,7 @@ use \Slim\Http\Response;
 /**
  * DBMigrationController 数据库迁移
  * @author Masterton <zhengcloud@foxmail.com>
- * @version 0.0.1
+ * @version 1.0.0
  * @time 2017-6-7 20:53:42
  *
  */
@@ -19,74 +19,24 @@ class DBMigrationController extends ControllerBase
     {
         $obj = null;
         switch ($table_name) {
-            case 'menu':
-                $obj = new \App\Migrations\Menu($table_name, $db->schema());
-                break;
-            case 'user':
-                $obj = new \App\Migrations\User($table_name, $db->schema());
-                break;
-            case 'wx_info':
-                $obj = new \App\Migrations\WXInfo($table_name, $db->schema());
-                break;
-            case 'admin':
+            // 后台管理用户表
+            case 'jm_fx2_admin':
                 $obj = new \App\Migrations\Admin($table_name, $db->schema());
                 break;
-            case 'article':
-                $obj = new \App\Migrations\Article($table_name, $db->schema());
+            // 后台管理角色表
+            case 'jm_fx2_role':
+                $obj = new \App\Migrations\Role($table_name, $db->schema());
                 break;
-            case 'message':
-                $obj = new \App\Migrations\Message($table_name, $db->schema());
-                break;
-            case 'system_message':
-                $obj = new \App\Migrations\SystemMessage($table_name, $db->schema());
-                break;
-            case 'email':
-                $obj = new \App\Migrations\Email($table_name, $db->schema());
-                break;
-            case 'notice':
-                $obj = new \App\Migrations\Notice($table_name, $db->schema());
-                break;
-            case 'user_token':
-                $obj = new \App\Migrations\UserToken($table_name, $db->schema());
-                break;
-            case 'admin_token':
-                $obj = new \App\Migrations\AdminToken($table_name, $db->schema());
-                break;
-            case 'resource':
-                $obj = new \App\Migrations\Resource($table_name, $db->schema());
-                break;
-            case 'comment':
-                $obj = new \App\Migrations\Comment($table_name, $db->schema());
-                break;
-            case 'wx_token':
-                $obj = new \App\Migrations\WXToken($table_name, $db->schema());
-                break;
-            case 'route':
+            // 后台管理权限（路由）表
+            case 'jm_fx2_route':
                 $obj = new \App\Migrations\Route($table_name, $db->schema());
                 break;
-            case 'route_group':
-                $obj = new \App\Migrations\RouteGroup($table_name, $db->schema());
-                break;
-            case 'group':
-                $obj = new \App\Migrations\Group($table_name, $db->schema());
-                break;
-            case 'power':
-                $obj = new \App\Migrations\Power($table_name, $db->schema());
-                break;
-            case 'log':
-                $obj = new \App\Migrations\Log($table_name, $db->schema());
-                break;
-            case 'file':
-                $obj = new \App\Migrations\File($table_name, $db->schema());
-                break;
-            case 'access':
-                $obj = new \App\Migrations\Access($table_name, $db->schema());
-                break;
-            case 'account':
-                $obj = new \App\Migrations\Account($table_name, $db->schema());
-                break;
-            case 'user_info':
-                $obj = new \App\Migrations\UserInfo($table_name, $db->schema());
+            // 会员用户表
+            case 'jm_fx2_member':
+                $obj = new \App\Migrations\Member($table_name, $db->schema());
+            // 会员用户信息表
+            case 'jm_fx2_member_info':
+                $obj = new \App\Migrations\MemberInfo($table_name, $db->schema());
                 break;
             # add <table name> with extra `case` here
             default:

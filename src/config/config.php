@@ -44,7 +44,7 @@ return [
         'db' => [
             'driver' => 'mysql',
             'host' => 'localhost',
-            'database' => 'test',
+            'database' => 'jm-fx2',
             'username' => 'root',
             'password' => 'root',
             'charset'   => 'utf8',

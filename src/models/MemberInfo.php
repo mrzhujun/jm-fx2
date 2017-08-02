@@ -3,21 +3,20 @@
 namespace App\Models;
 
 /**
-* Article model
-* @author Masterton <zhengcloud@foxmail.com>
-* @version 0.0.1
-* @since 1.0
-* @time 2017-6-17 11:24:48
+* MemberInfo model
+* @author Masterton
+* @version 1.0.0
+* @time 2017-8-2 13:54:18
 *
 */
-class Article extends Base
+class MemberInfo extends Base
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'article';
+    protected $table = 'jm_fx2_member_info';
     /**
      * Indicates if the model should be timestamped.
      * @var bool

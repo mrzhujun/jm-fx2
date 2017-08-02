@@ -1,6 +1,7 @@
 # Slim 项目模板
 
 ### 1、文件目录结构
+
 ```
 |-- project
   |-- plugin 插件目录
@@ -27,3 +28,10 @@
   |-- test
   |-- composer.json
 ```
+
+### 2、使用到的技术文档
+
+> 1、使用到的数据库操作模型 [Eloquent ORM](https://docs.golaravel.com/docs/5.3/views/)
+> 2、数据库迁移 [laravel 中的数据库操作](https://docs.golaravel.com/docs/5.3/migrations/)
+> 3、使用的php框架是 [slim 微框架](http://www.slimphp.net/)
+> 4、使用的视图模板是 [twig 模板](http://www.twigcn.com/)
