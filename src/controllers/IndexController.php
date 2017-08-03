@@ -17,9 +17,10 @@ use \Slim\Http\Response;
 class IndexController extends ControllerBase
 {
     /**
-     * 查看用户资料（列表） /admin/user get
-     * @param $id 用户id
-     * @param $.. 其他参数
+     * 主页 / get
+     * @param $request
+     * @param $response
+     * @return 主页
      *
      */
     public function index(Request $request, Response $response, $args=[])
@@ -30,12 +31,22 @@ class IndexController extends ControllerBase
         return $this->container->get('twig')->render($response, 'home/pages/index.twig', $result);
     }
 
-    public function test(Request $request, Response $response, $args=[])
+    /**
+     * 会员登录主页 /member get
+     * @param $request
+     * @param $response
+     * @return 会员登录主页
+     *
+     */
+    public function member(Request $request, Response $response, $args=[])
     {
-        $result = [
-            'title' => '普通用户列表',
-        ];
-        return $response->withJson(msg([], 'fsadfdsa', 1));
-        return $this->container->get('twig')->render($response, 'home/pages/index.twig', $result);
+        if (empty($_SESSION['member_info'])) {
+            return $response->withRedirect('/login')->withStatus(301);
+        } else {
+            $result = [
+                'title' => '用户主页',
+            ];
+            return $this->container->get('twig')->render($response, 'home/pages/article.twig', $result);
+        }
     }
 }
