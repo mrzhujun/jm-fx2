@@ -34,9 +34,14 @@ class DBMigrationController extends ControllerBase
             // 会员用户表
             case 'jm_fx2_member':
                 $obj = new \App\Migrations\Member($table_name, $db->schema());
+                break;
             // 会员用户信息表
             case 'jm_fx2_member_info':
                 $obj = new \App\Migrations\MemberInfo($table_name, $db->schema());
+                break;
+            // 会员用户登录账号表
+            case 'jm_fx2_account':
+                $obj = new \App\Migrations\Account($table_name, $db->schema());
                 break;
             # add <table name> with extra `case` here
             default:

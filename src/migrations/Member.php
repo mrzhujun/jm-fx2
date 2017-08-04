@@ -37,6 +37,12 @@ class Member extends Base
                 ->comment('注册IP地址');
             $table->string('mobile', 20)
                 ->comment('注册手机号码');
+            $table->string('weibo', 20)
+                ->comment('微博账号');
+            $table->string('wechat', 32)
+                ->comment('微信账号');
+            $table->string('qq', 16)
+                ->comment('QQ账号');
             $table->tinyInteger('type')
                 ->nullable()
                 ->comment('会员类型 1：企业会员 2：个人会员');
