@@ -8,6 +8,8 @@
 
 namespace App\Controllers;
 
+use \App\Models\Member;
+use \App\Models\Account;
 use \Slim\Http\Request;
 use \Slim\Http\Response;
 
@@ -40,7 +42,24 @@ class LoginController extends ControllerBase
      */
     public function loginHome(Request $request, Response $response, $args=[])
     {
-        // TODO
+        $params = $request->getParams();
+        if (!empty($params['username']) && !empty($params['password'])) {
+            $account = Account::where('username', $params['username'])->pluck('uid');
+            if (!empty($account)) {
+                $member = Member::where('id', $account[0])->get();
+                if ($params['password'] == $member[0]->password) {
+                    //$_SESSION['member_info'] = $member[0];
+                    $ret = msg([], '登录成功', 0, '/member');
+                } else {
+                    $ret = msg([], '用户名或密码错误', 1);
+                }
+            } else {
+                $ret = msg([], '用户名或密码错误', 1);
+            }
+        } else {
+            $ret = msg([], '参数错误', 1);
+        }
+        return $response->withJson($ret);
     }
 
     /**
@@ -52,7 +71,14 @@ class LoginController extends ControllerBase
      */
     public function logoutHome(Request $request, Response $response, $args=[])
     {
-        // TODO
+        $params = $request->getParams();
+        unset($_SESSION['member_info']);
+        if (empty($_SESSION['member_info'])) {
+            $ret = msg([], '注销成功', 0, '/login');
+        } else {
+            $ret = msg([], '注销失败', 1);
+        }
+        return $response->withJson($ret);
     }
 
     //-------------------------------------------后台登录------------------------------------------

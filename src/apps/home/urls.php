@@ -13,25 +13,25 @@ return [
     ],
     
     // 会员
-    '/member[/]' => [
+    'member[/]' => [
         'get' => [
-            'handler' => "App\Controllers\IndexController:member",
+            'handler' => "App\Controllers\MemberController:index",
             'name'    => 'home_get_member',
             'auth'    => true,
             'op_class' => '会员',
             'op_name' => '会员主页',
         ],
     ],
-    '/member/register[/]' => [
+    'member/register[/]' => [
         'get' => [
-            'handler' => "App\Controllers\IndexController:registerIndex",
+            'handler' => "App\Controllers\MemberController:registerIndex",
             'name'    => 'home_get_member_register',
             'auth'    => true,
             'op_class' => '会员',
             'op_name' => '会员注册页面',
         ],
         'post' => [
-            'handler' => "App\Controllers\IndexController:register",
+            'handler' => "App\Controllers\MemberController:register",
             'name'    => 'home_post_member_register',
             'auth'    => true,
             'op_class' => '会员',
@@ -40,7 +40,7 @@ return [
     ],
 
     // 前台登录
-    '/login[/]' => [
+    'login[/]' => [
         'get' => [
             'handler' => "App\Controllers\LoginController:indexHome",
             'name'    => 'home_get_login',
@@ -56,7 +56,7 @@ return [
             'op_name' => '登录',
         ],
     ],
-    '/logout[/]' => [
+    'logout[/]' => [
         'post' => [
             'handler' => "App\Controllers\LoginController:logoutHome",
             'name'    => 'home_post_logout',
@@ -68,7 +68,7 @@ return [
 
     // 第三方授权登录
     // 微博授权
-    '/login/weibo[/]' => [
+    'login/weibo[/]' => [
         'get' => [
             'handler' => "App\Controllers\ThirdPartyController:weiboAuthor",
             'name'    => 'home_get_login_weibo',
@@ -78,7 +78,7 @@ return [
         ],
     ],
     // 微信授权
-    '/login/wechat[/]' => [
+    'login/wechat[/]' => [
         'get' => [
             'handler' => "App\Controllers\ThirdPartyController:wechatAuthor",
             'name'    => 'home_get_login_wechat',
@@ -88,7 +88,7 @@ return [
         ],
     ],
     // QQ授权
-    '/login/qq[/]' => [
+    'login/qq[/]' => [
         'get' => [
             'handler' => "App\Controllers\ThirdPartyController:qqAuthor",
             'name'    => 'home_get_login_qq',
