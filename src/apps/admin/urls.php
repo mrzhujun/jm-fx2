@@ -10,6 +10,34 @@ return [
             'op_name' => '后台主页',
         ],
     ],
+
+    // 后台登录
+    '/login[/]' => [
+        'get' => [
+            'handler' => "App\Controllers\LoginController:indexAdmin",
+            'name'    => 'home_get_login',
+            'auth'    => true,
+            'op_class' => '后台登录',
+            'op_name' => '登录页面',
+        ],
+        'post' => [
+            'handler' => "App\Controllers\LoginController:loginAdmin",
+            'name'    => 'home_post_login',
+            'auth'    => true,
+            'op_class' => '后台登录',
+            'op_name' => '登录',
+        ],
+    ],
+    '/logout[/]' => [
+        'post' => [
+            'handler' => "App\Controllers\LoginController:logoutAdmin",
+            'name'    => 'home_post_logout',
+            'auth'    => true,
+            'op_class' => '后台登录',
+            'op_name' => '注销',
+        ],
+    ],
+
     // 管理员
     '/manager[/]' => [
         'get' => [

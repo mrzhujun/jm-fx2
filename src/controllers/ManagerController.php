@@ -40,7 +40,7 @@ class ManagerController extends ControllerBase
      */
     public function addManager(Request $request, Response $response, $args=[])
     {
-        
+        // TODO
     }
 
     /**
@@ -52,7 +52,7 @@ class ManagerController extends ControllerBase
      */
     public function modifyManager(Request $request, Response $response, $args=[])
     {
-        
+        // TODO
     }
 
     /**
@@ -64,6 +64,6 @@ class ManagerController extends ControllerBase
      */
     public function deleteManager(Request $request, Response $response, $args=[])
     {
-        
+        // TODO
     }
 }

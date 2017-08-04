@@ -42,14 +42,14 @@ return [
     // 前台登录
     '/login[/]' => [
         'get' => [
-            'handler' => "App\Controllers\LoginController:index",
+            'handler' => "App\Controllers\LoginController:indexHome",
             'name'    => 'home_get_login',
             'auth'    => true,
             'op_class' => '前台登录',
             'op_name' => '登录页面',
         ],
         'post' => [
-            'handler' => "App\Controllers\LoginController:login",
+            'handler' => "App\Controllers\LoginController:loginHome",
             'name'    => 'home_post_login',
             'auth'    => true,
             'op_class' => '前台登录',
@@ -58,7 +58,7 @@ return [
     ],
     '/logout[/]' => [
         'post' => [
-            'handler' => "App\Controllers\LoginController:logout",
+            'handler' => "App\Controllers\LoginController:logoutHome",
             'name'    => 'home_post_logout',
             'auth'    => true,
             'op_class' => '前台登录',

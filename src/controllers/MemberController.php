@@ -55,6 +55,6 @@ class MemberController extends ControllerBase
      */
     public function register(Request $request, Response $response, $args=[])
     {
-        
+        // TODO
     }
 }
