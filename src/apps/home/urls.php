@@ -65,4 +65,36 @@ return [
             'op_name' => '注销',
         ],
     ],
+
+    // 第三方授权登录
+    // 微博授权
+    '/login/weibo[/]' => [
+        'get' => [
+            'handler' => "App\Controllers\ThirdPartyController:weiboAuthor",
+            'name'    => 'home_get_login_weibo',
+            'auth'    => true,
+            'op_class' => '第三方登录',
+            'op_name' => '微博授权',
+        ],
+    ],
+    // 微信授权
+    '/login/wechat[/]' => [
+        'get' => [
+            'handler' => "App\Controllers\ThirdPartyController:wechatAuthor",
+            'name'    => 'home_get_login_wechat',
+            'auth'    => true,
+            'op_class' => '第三方登录',
+            'op_name' => '微信授权',
+        ],
+    ],
+    // QQ授权
+    '/login/qq[/]' => [
+        'get' => [
+            'handler' => "App\Controllers\ThirdPartyController:qqAuthor",
+            'name'    => 'home_get_login_qq',
+            'auth'    => true,
+            'op_class' => '第三方登录',
+            'op_name' => 'QQ授权',
+        ],
+    ],
 ];
